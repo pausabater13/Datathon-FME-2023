@@ -1,4 +1,4 @@
-# Barcelona Datathon 2023 - Project Tiitle
+# Barcelona Datathon 2023 - Project Tiiitle
 
 ## Overview
 This repository contains the winning project from the UPC BarcelonaTech FME Datathon 2023, held at the Facultat de Matemàtiques i Estadística, Universitat Politècnica de Catalunya. Our team of data enthusiasts embarked on an exciting journey to tackle a real-world problem using cutting-edge data science techniques.
