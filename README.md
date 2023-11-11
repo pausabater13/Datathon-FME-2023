@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# Barcelona Datathon 2023 - Project Tiiiiiitle
+# Barcelona Datathon 2023 - Project Title
 =======
 # Barcelona Datathon 2023 - Project Title
 >>>>>>> 21d8bfa7115332dc1d929130dcbc752c7004c5c6
