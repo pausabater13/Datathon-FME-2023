@@ -1,0 +1,19 @@
+des_color_specification_esp = ["AGUA","AMARILLO","AMARILLO FLUOR","AMARILLO PASTEL","ANTRACITA","ARENA","ASFALTO","AZUL","AZUL NOCHE","BEIGE","BERMELLON","BILLAR","BLANCO","BLEACH","BLOOD","BLUEBLACK","BOTELLA","BURDEOS","CALDERO","CAMEL","CANELA","CARAMELO","CAZA","CELESTE","CENIZA","CEREZA","CHICLE","CHOCOLATE","CIRUELA","COBRE","COFFEE","COGNAC","CORAL","CRUDO","CUERO","CURRY","DIRTY","DIRTY CLARO","DIRTY OSCURO","ELECTRICO","ESMERALDA","FRESA","FUCSIA","GERANIO","GRANATE","GRIS","GRIS CLARO VIGORE","GRIS MEDIO VIGORE","GRIS OSCURO VIGORE","GUNMETAL","HIELO","INDIGO","KHAKI","LILA","LIMA","MALVA","MANDARINA","MANZANA","MARFIL","MARINO","MARRON","MENTA","MISTERIO","MORADO","MOSTAZA","MUSGO","NARANJA","NARANJA PASTEL","NAVY","NEGRO","NUDE","OCRE","OFFWHITE","OLIVA","ORO","PEACH","PERLA","PETROLEO","PIEDRA","PIMENTON","PLATA","PORCELANA","PRUSIA","ROJO","ROSA","ROSA FLUOR","ROSA LIGHT","ROSA PALO","ROSA PASTEL","SALMON","TABACO","TAUPE","TEJANO CLARO","TEJANO GRIS","TEJANO GRIS CLARO","TEJANO GRIS OSCURO","TEJANO MEDIO","TEJANO NEGRO","TEJANO OSCURO","TEJANO SOFT","TERRACOTA","TINTA","TOPO","TURQUESA","VAINILLA","VERDE","VERDE PASTEL","VINO","VIOLETA","VISON"]
+
+des_agrup_color_eng = ["BLUE","BROWN","GREEN","GREY","ORANGE","PINK","PURPLE","RED","WHITE","YELLOW"]
+
+des_sex = ["Female","Male","Unisex"]
+
+des_age = ["Adult","Kids"]
+
+des_line = ["HE","HOME","KIDS","SHE","VIOLETA"]
+
+des_fabric = ["C-COMPLEMENTOS","J-JEANS","K-CIRCULAR","L-PIEL","O-POLIPIEL","P-PLANA","T-TRICOT"]
+
+des_product_category = ["Accesories, Swim and Intimate","Beauty","Bottoms","Dresses, jumpsuits and Complete set","Home","Outerwear","Tops"]
+
+des_product_aggregated_family = ["Accessories","Bedroom","Coats and Parkas","Decor","Dinning Room","Dresses and jumpsuits","Fragance","Jackets and Blazers","Jeans","Shirts","Skirts and shorts","Sweaters and Cardigans","Swim and intimate","T-shirts","Tops","Trousers & leggings"]
+
+des_product_family = ["Bags","Bedding","Belts and Ties","Blazers","Bodysuits","Cardigans","Coats","Deco Accessories","Deco Textiles","Dresses","Footwear","Fragances","Gadgets","Glasses","Glassware","Hats, scarves and gloves","Intimate","Jackets","Jeans","Jewellery","Jumpsuit","Leather jackets","Leggings and joggers","Outer Vest","Parkas","Poloshirts","Puffer coats","Shirt","Shorts","Skirts","Sweater","Sweatshirts","Swimwear","T-shirt","Tops","Trenchcoats","Trousers","Vest","Wallets & cases"]
+
+des_product_type = ["Ankle Boots","Backpack","Basket","Beach Towel","Beanie","Bed Cushion Case","Bedspread","Belt","Belt bag","Bermudas","Bikini pantie","Bikini top","Blazer","Blouse","Bodymist","Bodysuit","Boots","Box","Bracelet","Braces","Bras","Bucket bag","Candle","Candle Holder","Cap","Cape","Card holder","Cardigan","Cardigan Vest","Carpet Yarn","Case","Citybag","Clogs","Clutch and Pochettes","Coat","Cosmetic bag","Crossbody bag","Curtain","Cushion Case","Dress","Dressing Gown (Bata)","Duvet Covers","Earrings","Foulard","Fragance","Gadget","Glasses","Glasses case","Gloves","Hairband","Hairclip","Handbag","Hat","Headband","Home Spray","Jacket","Jacket (Cazadora)","Jeans","Joggers","Jug","Jumpsuit","Kaftan","Kerchief","Keyring","Knicker","Leather Jacket","Leggings","Mini Bag","Necklace","Nightgown","Organiser","Outer vest","Overall","Overshirt","Parka","Pichi","Pillow Case","Plaid","Poloshirt","Poncho","Puffer coat","Purse","Pyjama","Pyjama Cardigan","Pyjama Shirt","Pyjama Shorts","Pyjama Sweatshirt","Pyjama T-Shirt","Pyjama Top","Pyjama Trousers","Pyjiama Sweater","Quilt","Ring","Sandals","Scarf","Shape","Shirt","Shoes","Shorts","Shoulder bag","Skirt","Skort","Slippers","Sock (Pack)","Socks","Sunglasses","Sweater","Sweater Vest","Sweatshirt","Swimsuit","T-Shirt","Tie","Tights","Top","Totes bag","Trainers","Trenchcoat","Trousers","Tumblers","Turban","Umbrella","Vest","Wallet"]
