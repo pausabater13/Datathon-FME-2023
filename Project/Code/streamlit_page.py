@@ -29,7 +29,7 @@ def main():
 
     # Submit button
     if col1.button("Submit"):
-        logo_path = os.path.join('../../datathon-2023-fashion-compatibility-main/datathon/dataset/images', cod_modelo_color.replace("-","_")+".jpg")
+        logo_path = os.path.join('../../datathon-2023-fashion-compatibility-main/datathon/images', cod_modelo_color.replace("-","_")+".jpg")
         if logo_path:
             col2.image(logo_path,  use_column_width="auto") #'''caption='Generated Image','''
         else:
