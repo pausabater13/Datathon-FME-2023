@@ -1,7 +1,7 @@
 # Barcelona Datathon 2023 - Project Title
 
 ## Overview
-This repository contains the winning project from the UPC BarcelonaTech FME Datathon 2023, held at the Facultat de Matemàtiques i Estadística, Universitat Politècnica de Catalunya. Our team of data enthusiasts embarked on an exciting journey to tackle a real-world problem using cutting-edge data science techniques.
+This repository contains the project from the UPC BarcelonaTech FME Datathon 2023, held at the Facultat de Matemàtiques i Estadística, Universitat Politècnica de Catalunya. Our team of data enthusiasts embarked on an exciting journey to tackle a real-world problem using cutting-edge data science techniques.
 
 ## Project Description
 In this datathon, we were presented with a challenging problem statement that required us to leverage our data analysis and machine learning skills. The project aimed to address a pressing issue by applying data-driven solutions and creating actionable insights.
