@@ -1,0 +1,128 @@
+import pandas as pd
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+# DataFrame de prendas
+datos_prendas = pd.DataFrame({
+    'cod_modelo_color': [1, 2, 3, 4, 5, 6, 7, 8],
+    'cod_color_code': ['Rojo', 'Azul', 'Verde', 'Negro', 'Blanco', 'Gris', 'Amarillo', 'Rosa'],
+    'des_color_specification_esp': ['Hombre', 'Mujer', 'Unisex', 'Hombre', 'Mujer', 'Unisex', 'Hombre', 'Mujer'],
+    'des_agrup_color_eng': ['Male', 'Female', 'Unisex', 'Male', 'Female', 'Unisex', 'Male', 'Female'],
+    'des_sex': ['Adulto', 'Joven', 'Adulto', 'Joven', 'Adulto', 'Joven', 'Adulto', 'Joven'],
+    'des_age': ['Rojo', 'Azul', 'Verde', 'Negro', 'Blanco', 'Gris', 'Amarillo', 'Rosa'],
+    'des_line': ['Linea1', 'Linea2', 'Linea3', 'Linea1', 'Linea2', 'Linea3', 'Linea1', 'Linea2'],
+    'des_fabric': ['Algodon', 'Lino', 'Poliester', 'Algodon', 'Lino', 'Poliester', 'Algodon', 'Lino'],
+    'des_product_category': ['Parte inferior', 'Parte superior', 'Parte inferior', 'Parte superior', 'Parte inferior', 'Parte superior', 'Parte inferior', 'Parte superior'],
+    'des_product_aggregated_family': ['Trousers & leggings', 'Shirts & tops', 'Trousers & leggings', 'Shirts & tops', 'Trousers & leggings', 'Shirts & tops', 'Trousers & leggings', 'Shirts & tops'],
+    'des_product_family': ['Trousers', 'Shirts', 'Trousers', 'Shirts', 'Trousers', 'Shirts', 'Trousers', 'Shirts'],
+    'des_product_type': ['Trousers', 'Shirt', 'Trousers', 'Shirt', 'Trousers', 'Shirt', 'Trousers', 'Shirt'],
+})
+
+# DataFrame de outfits (solo exitosos)
+datos_outfits = pd.DataFrame({
+    'cod_outfit': range(0, 15),
+    'prenda_ids': [
+        [1, 2, 4], [2, 3, 5], [1, 3, 6], [4, 5, 7], [3, 6, 8],
+        [1, 2, 5], [2, 4, 7], [3, 5, 8], [1, 4, 6], [2, 5, 8],
+        [1, 3, 7], [4, 6, 8], [2, 3, 6], [1, 5, 7], [3, 4, 8]
+    ]
+})
+
+# Imprimir los DataFrames
+print("Datos de Prendas:")
+print(datos_prendas)
+
+print("\nDatos de Outfits:")
+print(datos_outfits)
+
+# Expandir la lista en 'prenda_ids'
+datos_outfits_expandidos = datos_outfits.explode('prenda_ids')
+
+# Convertir 'prenda_ids' a tipo entero
+datos_outfits_expandidos['prenda_ids'] = datos_outfits_expandidos['prenda_ids'].astype(int)
+
+# Realizar la fusión
+datos_combinados = pd.merge(datos_outfits_expandidos, datos_prendas, left_on='prenda_ids', right_on='cod_modelo_color', how='inner')
+
+# Separar características (X)
+X = datos_combinados[['cod_color_code', 'des_sex', 'des_age', 'des_line', 'des_fabric', 'des_product_category', 'des_product_aggregated_family', 'des_product_family', 'des_product_type']]
+
+# Codificación one-hot para variables categóricas
+X = pd.get_dummies(X)
+
+# Normalizar las características
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+
+# Construir el modelo
+model = Sequential()
+model.add(Dense(64, activation='relu', input_shape=(X.shape[1],)))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+# Compilar el modelo
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Todas las combinaciones son exitosas, asumimos que todas las predicciones serán cercanas a 1
+y = np.array([1] * len(X))  # Convertir la lista a un array NumPy
+
+# Dividir los datos en conjuntos de entrenamiento y prueba
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Entrenar el modelo
+model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+
+# Evaluar el rendimiento del modelo en el conjunto de prueba
+loss, accuracy = model.evaluate(X_test, y_test)
+print(f'Accuracy: {accuracy:.2f}')
+
+# Predecir las etiquetas para el conjunto de prueba
+predicciones = model.predict(X_test)
+
+# Imprimir outfits y predicciones
+outfits_predichos = pd.DataFrame({
+    'cod_outfit': range(len(X_test)),  # Crear un rango de índices
+    'prediccion': predicciones.flatten()
+})
+
+print("Outfits y sus predicciones:")
+print(outfits_predichos)
+
+
+
+
+import numpy as np
+
+# Crear un conjunto de prendas aleatorio
+prendas_aleatorias = pd.DataFrame({
+    'cod_color_code': np.random.choice(datos_prendas['cod_color_code'], size=X.shape[1]),
+    'des_sex': np.random.choice(datos_prendas['des_sex'], size=X.shape[1]),
+    'des_age': np.random.choice(datos_prendas['des_age'], size=X.shape[1]),
+    'des_line': np.random.choice(datos_prendas['des_line'], size=X.shape[1]),
+    'des_fabric': np.random.choice(datos_prendas['des_fabric'], size=X.shape[1]),
+    'des_product_category': np.random.choice(datos_prendas['des_product_category'], size=X.shape[1]),
+    'des_product_aggregated_family': np.random.choice(datos_prendas['des_product_aggregated_family'], size=X.shape[1]),
+    'des_product_family': np.random.choice(datos_prendas['des_product_family'], size=X.shape[1]),
+    'des_product_type': np.random.choice(datos_prendas['des_product_type'], size=X.shape[1]),
+})
+
+# Codificar one-hot para variables categóricas
+prendas_aleatorias_encoded = pd.get_dummies(prendas_aleatorias)
+
+# Normalizar las características
+prendas_aleatorias_normalized = scaler.transform(prendas_aleatorias_encoded)
+
+# Predecir con el modelo
+prediccion_aleatoria = model.predict(prendas_aleatorias_normalized)
+
+print("Conjunto de prendas aleatorio:")
+print(prendas_aleatorias)
+print("\nPredicción del modelo:")
+print(prediccion_aleatoria)
+
+
+
+
