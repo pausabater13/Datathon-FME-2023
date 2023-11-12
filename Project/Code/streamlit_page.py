@@ -1,6 +1,8 @@
+#streamlit run streamlit_page.py
 import streamlit as st
 import pandas as pd
 import os
+from algorithm.py import predict
 
 st.set_page_config(
     page_icon=":chart_with_upwards_trend:",
@@ -34,10 +36,15 @@ def main():
             col2.image(logo_path,  use_column_width="auto") #'''caption='Generated Image','''
         else:
             col2.warning("No matching logo_image found.")
+        for ii in range(5):
+                st.write("Outfit proposal "+ii)
+                st.image(predict( cod_modelo_color.replace("-","_")),  use_column_width="auto")
     
-    # Add content to the new columns
-    col3.write("Column 4 content")
-    col4.write("Column 5 content")
+        
+
+        
+
+
 
     
     
