@@ -12,7 +12,7 @@ def generateRandomOutfit():
     df_bot=df1[df_clothes['des_product_category']=='Bottoms']
     df_DJC=df1[df_clothes['des_product_category']=='Dresses, jumpsuits and Complete set']
     df_hom=df1[df_clothes['des_product_category']=='Home']
-    #df_out=df1[df_clothes['des_product_category']=='Outwear']
+    df_out=df1[df_clothes['des_product_category']=='Outerwear']
     df_top=df1[df_clothes['des_product_category']=='Tops']
 
 
